@@ -1,0 +1,58 @@
+{
+    "name": "playwright-e2e-tests",
+    "version": "1.0.0",
+    "description": "Playwright Framework with Typescript for E2E testing",
+    "main": "index.js",
+    "scripts": {
+      "test": "npx playwright test",
+      "test:single": "npx playwright test user_role_platform.spec.ts --project=chromium",
+      "test:parallel": "npx playwright test --grep @smoke-platform --project=Chrome",
+      "test:serial": "npx playwright test --grep @Smoke --workers=1 --project=Chrome",
+      "test:ui": "npx playwright test --grep @Smoke --ui",
+      "test:api2": "npx playwright test --grep @API --workers=1 --project=Chrome",
+      "test:record": "npx playwright codegen",
+      "test:visual": "npx playwright test visualComparison.spec.ts --project=chromium",
+      "test:api": "npx playwright test api.spec.ts --config=api.config.ts --project=Chromium",
+      "test:api3": "npx playwright test api.spec.ts --project=API",
+      "report-open": "allure open allure-report",
+      "report-generate": "allure generate --clean allure-results",
+      "pretest": "rimraf allure-results && rimraf allure-report && rimraf test-screenshots && rimraf wdio-logs",
+      "lint": "eslint .",
+      "lint:fix": "eslint . --fix"
+    },
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/tarzla/playwright-ts.git"
+    },
+    "author": "Tarik Zlatar",
+    "license": "MIT",
+    "keywords": [],
+    "devDependencies": {
+      "@playwright/test": "^1.39.0",
+      "@types/adm-zip": "^0.5.0",
+      "@types/express": "^4.17.17",
+      "@types/node": "^20.9.1",
+      "@typescript-eslint/eslint-plugin": "^6.9.0",
+      "@typescript-eslint/parser": "^6.9.0",
+      "adm-zip": "^0.5.10",
+      "allure-commandline": "^2.23.1",
+      "allure-playwright": "^2.9.2",
+      "eslint": "^8.52.0",
+      "eslint-config-prettier": "^9.0.0",
+      "eslint-import-resolver-typescript": "^3.6.0",
+      "eslint-plugin-import": "^2.28.0",
+      "playwright-expect": "^0.1.2",
+      "rimraf": "^5.0.1",
+      "tslib": "^2.6.2",
+      "typescript": "^5.2.2",
+      "winston": "^3.10.0",
+      "dotenv": "^16.3.1",
+      "eslint-plugin-jsdoc": "^46.4.6",
+      "eslint-plugin-playwright": "^0.15.3",
+      "eslint-plugin-prettier": "^5.0.0",
+      "husky": "^8.0.3",
+      "lint-staged": "^14.0.0",
+      "prettier": "^3.0.2"
+    }
+  }
+  

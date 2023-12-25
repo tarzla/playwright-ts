@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "esModuleInterop": true,                             /*This is for "path" module import*/
+    "moduleResolution": "node",
+    "importHelpers": true,
+    "target": "ESNext",
+    "module": "commonjs",
+    "sourceMap": true,
+    "baseUrl": ".",                                      /* Specify the base directory to resolve non-relative module names. */
+    "paths": {                                           /* Specify a set of entries that re-map imports to additional lookup locations. */
+      "@pages/*":["pageFactory/pageRepository/*"],
+      "@objects/*":["pageFactory/objectRepository/*"],
+      "@lib/*":["lib/*"],
+      "@setup/*":["setup/*"],
+      "@uils/*":["utils/*"],
+    }, 
+    "resolveJsonModule": true                            
+  },
+  "include": ["src/**/*.ts", "tests/**/*.ts", "playwright.config.ts"],
+  "exclude": ["node_modules", "server.ts", "playwright.config.ts", "playwright-tests-folder"]
+}
