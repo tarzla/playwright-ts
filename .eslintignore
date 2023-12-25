@@ -1,0 +1,12 @@
+// .eslintignore
+
+# Playwright Specific
+node_modules/
+test-results/
+playwright-report
+allure-report/
+html-report/
+summary.json
+
+# IDE - VSCode
+.vscode
